@@ -15,7 +15,7 @@ const SearchContainer = ({ navigation }) => {
 
     const fetchSearch = () => {
         setIsLoading(true)
-        console.log("Making Call to Api with :" + searchedItem);
+        
         getSearchedItems(searchedItem, searchedType).then(
             res => {
                 setSearchedItemResponse(res)

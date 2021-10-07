@@ -2,7 +2,7 @@ import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import Tabs from '../screens/Tabs'
-// import ResultsScreen from '../screens/ResultsScreen'
+import DescriptionScreen from '../screens/DescriptionScreen'
 
 const Stack = createNativeStackNavigator()
 
@@ -24,10 +24,10 @@ const AppStack = () => (
                 }}
             />
 
-            {/* <Stack.Screen 
-            name="ResultsPage"
-                component={ResultsScreen}
-                options={({ route }) => ({ headerBackTitle: 'Back to List', headerTitle: route.params.name })} /> */}
+            <Stack.Screen
+                name="DescriptionPage"
+                component={DescriptionScreen}
+                options={({ route }) => ({ headerBackTitle: 'Back to List', headerTitle: route.params.name })} />
 
         </Stack.Navigator>
     </NavigationContainer>

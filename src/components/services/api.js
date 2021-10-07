@@ -4,7 +4,7 @@ import { APP_KEY, BASE_URL } from '../config/api_config'
 
 export const getSearchedItems = async (searchInput, type) => {
   const url = `${BASE_URL}search/${type}`;
-  console.log(`Call initiatization ${url}`);
+
   try {
     const params = {
       api_key: APP_KEY,
@@ -13,7 +13,7 @@ export const getSearchedItems = async (searchInput, type) => {
 
     const res = await makeApiCall(url, params);
 
-    return res;
+    return res.results;
   } catch (error) {
     throw error
   }
@@ -36,7 +36,7 @@ export const getMovie = async (id) => {
   }
 };
 
-export const getTvSeries = async (id) => {
+export const getTvShow = async (id) => {
   const url = `${BASE_URL}tv/${id}`;
   try {
     const params = {
@@ -52,15 +52,15 @@ export const getTvSeries = async (id) => {
 };
 
 const makeApiCall = async (url, params) => {
-
-  console.log(`making call to URL: ${url}`);
   
+console.log(`making call to URL: ${url}`);
+
   const searchAxios = axios.create({
     paramsSerializer: params => qs.stringify(params)
   })
 
   const response = await searchAxios.get(url, { params })
-  const formattedResponse = response.data.results;
+  const formattedResponse = response.data;
 
   return formattedResponse;
 
