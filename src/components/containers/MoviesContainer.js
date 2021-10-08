@@ -45,7 +45,7 @@ const MoviesContainer = ({ navigation }) => {
                 <View style={ movieContainerStyles.resultView}>
                     {apiData ?
                         <SearchedItemsList navigation={navigation} searchResults={apiData} />
-                        : <Text style={movieContainerStyles.defaultText}>Please select option from dropdown above</Text>}
+                        : <Text style={movieContainerStyles.defaultText}>Please select option from dropdown</Text>}
                 </View>
 
             </Center>
@@ -58,9 +58,8 @@ const movieContainerStyles = StyleSheet.create({
         marginVertical: 20,
     },
     defaultText: {
-        fontWeight: 'bold',
         alignSelf:'center',
-        fontSize:15,
+        fontSize:18,
         paddingBottom:200       
     },
     center: {

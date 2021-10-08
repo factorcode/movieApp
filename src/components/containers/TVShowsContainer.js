@@ -43,7 +43,7 @@ const TVShowsContainer = ({ navigation }) => {
                 <View style={ tvContainerStyles.resultView}>
                     {apiData ?
                         <SearchedItemsList navigation={navigation} searchResults={apiData} />
-                        : <Text style={tvContainerStyles.defaultText}>Please select option from dropdown above</Text>}
+                        : <Text style={tvContainerStyles.defaultText}>Please select option from dropdown</Text>}
                 </View>
 
             </Center>
@@ -56,9 +56,8 @@ const tvContainerStyles = StyleSheet.create({
         marginVertical: 20,
     },
     defaultText: {
-        fontWeight: 'bold',
         alignSelf:'center',
-        fontSize:15,
+        fontSize:18,
         paddingBottom:200
     },
     center: {
