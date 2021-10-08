@@ -1,5 +1,6 @@
 import { FlatList, Text, View } from 'native-base'
 import React from 'react'
+import { StyleSheet } from "react-native";
 import MovieCard from '../layout/MovieCard'
 
 const SearchedItemsList = ({ navigation, searchResults }) => {
@@ -26,7 +27,7 @@ const SearchedItemsList = ({ navigation, searchResults }) => {
           keyExtractor={item => item.id.toString()}
           showsVerticalScrollIndicator={false}
         />
-        : <Text> Please instantiate search</Text>}
+        : <Text style={StyleSheet.create({fontSize:20, paddingVertical:50})}> Please instantiate search</Text>}
     </>
   )
 }

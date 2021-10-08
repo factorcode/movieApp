@@ -6,7 +6,6 @@ import { TVListOptions } from '../config/dropdown_config';
 import SearchedItemsList from '../lists/SearchedItemsList';
 import { getTvShow } from '../services/api'
 import { Center } from "native-base";
-import { alignItems, justifyContent, justifyItems } from "styled-system";
 
 const TVShowsContainer = ({ navigation }) => {
 
@@ -37,7 +36,7 @@ const TVShowsContainer = ({ navigation }) => {
 
     return (
         <>
-            <Center px={4} style={tvContainerStyles.mark, tvContainerStyles.center}>
+            <Center px={4} style={tvContainerStyles.center}>
                 <View style={tvContainerStyles.dropSelect}>
                     <DropSelect onchange={setSelectedValue} listItems={TVListOptions} value={selectedListValue} />
                 </View>

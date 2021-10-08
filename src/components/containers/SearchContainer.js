@@ -15,7 +15,7 @@ const SearchContainer = ({ navigation }) => {
 
     const fetchSearch = () => {
         setIsLoading(true)
-        
+
         getSearchedItems(searchedItem, searchedType).then(
             res => {
                 setSearchedItemResponse(res)
@@ -34,15 +34,16 @@ const SearchContainer = ({ navigation }) => {
 
 
     return (
-        <Container>
+
             <Center px={4}>
                 <SearchForm onInputChange={handleInputChange} fetchSearch={fetchSearch} />
                 {isLoading ? <Loading />
                     : <SearchedItemsList navigation={navigation} searchResults={searchedItemResponse} />
                 }
             </Center>
-        </Container>
+
     )
 }
+
 
 export default SearchContainer
